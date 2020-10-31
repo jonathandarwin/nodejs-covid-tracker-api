@@ -25,6 +25,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(8888, () => {
-    console.log(`Listen to port : 8888`)
+const PORT = process.env.PORT || 8888
+
+app.listen(PORT, () => {
+    console.log(`Listen to port : ${PORT}`)
 })
