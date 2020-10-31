@@ -17,6 +17,14 @@ app.get('/indonesia', (req, res) => {
     })
 })
 
+app.get('*', (req, res) => {
+    res.send({
+        status : 0,
+        message : 'Not Found',
+        data : null
+    })
+})
+
 app.listen(8888, () => {
     console.log(`Listen to port : 8888`)
 })
