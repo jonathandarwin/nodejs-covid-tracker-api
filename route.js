@@ -17,6 +17,31 @@ app.get('/indonesia', (req, res) => {
     })
 })
 
+app.get('/indonesia/province', (req, res) => {
+    const listProvince = []
+    listProvince.push({
+        name : 'Jakarta',
+        death : 12,
+        recovered : 45,
+        positive : 78,
+        lastUpdated : '2020-10-31 10:35:00'
+    })
+
+    listProvince.push({
+        name : 'Jawa Barat',
+        death : 1,
+        recovered : 4,
+        positive : 7,
+        lastUpdated : '2020-10-31 10:35:00'
+    })
+
+    res.send({
+        status : 1,
+        message : 'OK',
+        data : listProvince
+    })
+})
+
 app.get('*', (req, res) => {
     res.send({
         status : 0,
@@ -25,8 +50,8 @@ app.get('*', (req, res) => {
     })
 })
 
-const PORT = process.env.PORT || 8888
+const PORT = process.env
 
-app.listen(PORT, () => {
-    console.log(`Listen to port : ${PORT}`)
+app.listen(8888, () => {
+    console.log(`Listen to port : 8888`)
 })
